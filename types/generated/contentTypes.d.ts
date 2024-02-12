@@ -362,12 +362,12 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiDreamStorieDreamStorie extends Schema.CollectionType {
+export interface ApiDreamStoryDreamStory extends Schema.CollectionType {
   collectionName: 'dream_stories';
   info: {
-    singularName: 'dream-storie';
+    singularName: 'dream-story';
     pluralName: 'dream-stories';
-    displayName: 'Dream Storie';
+    displayName: 'Dream Story';
   };
   options: {
     draftAndPublish: true;
@@ -375,7 +375,7 @@ export interface ApiDreamStorieDreamStorie extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
-    image: Attribute.Media;
+    image: Attribute.Media & Attribute.Required;
     date: Attribute.Date &
       Attribute.Required &
       Attribute.DefaultTo<'2024-02-12'>;
@@ -383,13 +383,13 @@ export interface ApiDreamStorieDreamStorie extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::dream-storie.dream-storie',
+      'api::dream-story.dream-story',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::dream-storie.dream-storie',
+      'api::dream-story.dream-story',
       'oneToOne',
       'admin::user'
     > &
@@ -826,7 +826,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::dream-storie.dream-storie': ApiDreamStorieDreamStorie;
+      'api::dream-story.dream-story': ApiDreamStoryDreamStory;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

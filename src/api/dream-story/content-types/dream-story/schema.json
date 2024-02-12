@@ -2,9 +2,9 @@
   "kind": "collectionType",
   "collectionName": "dream_stories",
   "info": {
-    "singularName": "dream-storie",
+    "singularName": "dream-story",
     "pluralName": "dream-stories",
-    "displayName": "Dream Storie"
+    "displayName": "Dream Story"
   },
   "options": {
     "draftAndPublish": true
@@ -24,7 +24,8 @@
         "images"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true
     },
     "date": {
       "type": "date",
