@@ -368,17 +368,21 @@ export interface ApiDreamStoryDreamStory extends Schema.CollectionType {
     singularName: 'dream-story';
     pluralName: 'dream-stories';
     displayName: 'Dream Story';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    image: Attribute.Media & Attribute.Required;
-    date: Attribute.Date &
+    description: Attribute.Text &
       Attribute.Required &
-      Attribute.DefaultTo<'2024-02-12'>;
+      Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    image: Attribute.Media & Attribute.Required;
+    date: Attribute.DateTime & Attribute.Required;
+    content: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
