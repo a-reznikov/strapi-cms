@@ -4,7 +4,8 @@
   "info": {
     "singularName": "dream-story",
     "pluralName": "dream-stories",
-    "displayName": "Dream Story"
+    "displayName": "Dream Story",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,19 +18,23 @@
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 200
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "date": {
-      "type": "date",
-      "default": "2024-02-12",
+      "type": "datetime",
+      "required": true
+    },
+    "content": {
+      "type": "text",
       "required": true
     }
   }
